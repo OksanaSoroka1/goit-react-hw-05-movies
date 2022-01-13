@@ -1,0 +1,24 @@
+.form {
+  width: 550px;
+  display: flex;
+  justify-content: space-between;
+}
+.input {
+  height: 40px;
+  width: 300px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.button {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+  background-color: rgb(120, 139, 245);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.button:hover,
+.button:focus {
+  background-color: rgb(167, 177, 233);
+}

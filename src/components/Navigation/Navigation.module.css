@@ -1,0 +1,16 @@
+.navigation {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.link {
+  font-size: 20px;
+  color: black;
+}
+
+.link--active {
+  color: rgb(0, 195, 255);
+  font-size: 20px;
+}

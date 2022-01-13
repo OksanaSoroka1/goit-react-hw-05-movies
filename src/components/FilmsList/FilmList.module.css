@@ -1,0 +1,10 @@
+.item:not(:last-child) {
+  margin-bottom: 7px;
+}
+.link {
+  color: black;
+}
+.link:hover,
+.link:focus {
+  color: blue;
+}

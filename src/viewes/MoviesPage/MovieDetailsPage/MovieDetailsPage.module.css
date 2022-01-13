@@ -1,0 +1,20 @@
+.button {
+  width: 70px;
+  height: 20px;
+
+  background-color: rgb(120, 139, 245);
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+.button:hover,
+.button:focus {
+  background-color: rgb(167, 177, 233);
+}
+
+.information {
+  display: flex;
+}
+.thumb {
+  margin-right: 30px;
+}
