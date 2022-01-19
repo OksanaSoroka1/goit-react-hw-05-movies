@@ -1,4 +1,4 @@
-import { useParams, NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { useParams, NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { detailsMovieSearchApi } from '../../../api/api';
 import { useEffect, useState } from 'react';
 import css from './MovieDetailsPage.module.css';
@@ -7,8 +7,9 @@ const MovieDetailsPage = () => {
   const params = useParams();
   const [film, setFilm] = useState({});
   const [genres, setGenres] = useState([]);
+  const [navNumber, setNavNumber] = useState(-1)
   const navigate = useNavigate();
-
+  const location = useLocation();
   useEffect(() => {
     detailsMovieSearchApi(params.movieId)
       .then(responce => {
@@ -20,8 +21,19 @@ const MovieDetailsPage = () => {
       });
   }, []);
 
-  function onBackBtnClick() {
-    navigate(-1);
+  useEffect(() => { 
+    if (location.pathname.includes('cast')) { 
+      setNavNumber(prevState => (navNumber - 1))
+      return
+    }
+    if (location.pathname.includes('reviews')) {
+      setNavNumber(prevState => (navNumber - 1))
+      return
+    } 
+  },[location.pathname])
+
+  function onBackBtnClick() { 
+    navigate(navNumber);
   }
 
   return (

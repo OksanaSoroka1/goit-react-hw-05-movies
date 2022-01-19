@@ -6,7 +6,7 @@ import { FilmList } from '../../components/FilmsList';
 
 const MoviesPage = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+  let navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [filmList, setFilmList] = useState([]);
 
